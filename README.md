@@ -29,14 +29,21 @@ You have two ways to do that.
 First way is inserting data with key and value parameters
 ```cpp
 /* ... */
-```
 
-json.addField()
+json.addField("value1", 2);
+json.addField("value2", 5);
+
+/* ... */
+```
 
 Second way is inserting data as Field type, just like that
 
 
 ```cpp
+/* ... */
+
+json.addField({"value3", 6});
+
 /* ... */
 ```
 
