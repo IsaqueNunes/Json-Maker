@@ -8,50 +8,50 @@ using namespace std;
 
 
 void JSON::addField(string key, double value) {
-	fields.push_back({key, value});
+    fields.push_back({key, value});
 }
 
 void JSON::addField(Field field) {
-	fields.push_back(field);
+    fields.push_back(field);
 }
 
 void JSON::addFields(Field *fieldsToInsert, size_t fieldsAmmount) {
-	cout << fieldsAmmount << endl;
-	for(int i = 0; i < fieldsAmmount; i++) {
-		fields.push_back(fieldsToInsert[i]);
-	}
+    cout << fieldsAmmount << endl;
+    for(int i = 0; i < fieldsAmmount; i++) {
+        fields.push_back(fieldsToInsert[i]);
+    }
 }
 
 list<Field> JSON::getFields() {
-	return fields;
+    return fields;
 }
 
 double JSON::getValue(string key) {
-	for(auto const& field : fields) {
-		if(field.key == key) {
-			return field.value;
-		}
-	}
-	throw "That key does not exists";
+    for(auto const& field : fields) {
+        if(field.key == key) {
+            return field.value;
+        }
+    }
+    throw "That key does not exists";
 }
 
 string JSON::toString() {
-	string fullJson = "{";
+    string fullJson = "{";
 
-	for(auto const& field : fields) {
-		stringstream ss;
+    for(auto const& field : fields) {
+        stringstream ss;
 
-		ss << field.value;
-		string stringFieldValue;
-		ss >> stringFieldValue;
+        ss << field.value;
+        string stringFieldValue;
+        ss >> stringFieldValue;
 
-		if ( field.key != fields.back().key) {
-			fullJson+="\"" + field.key + "\":" + stringFieldValue + ",";
-		} else {
-			fullJson+="\"" + field.key + "\":" + stringFieldValue;
-		}
-	}
-	fullJson+='}';
+        if ( field.key != fields.back().key) {
+            fullJson+="\"" + field.key + "\":" + stringFieldValue + ",";
+        } else {
+            fullJson+="\"" + field.key + "\":" + stringFieldValue;
+        }
+    }
+    fullJson+='}';
 
-	return fullJson;
+    return fullJson;
 }

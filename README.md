@@ -14,11 +14,11 @@ First of all, you need import JSON lib and instantiate a new JSON
 
 
 int main {
-	/* ... */
+    /* ... */
 
-	JSON json;
+    JSON json;
 
-	/* ... */
+    /* ... */
 }
 ```
 
@@ -56,9 +56,9 @@ Here you need insert data as Field type.
 
 // Create an array of Fields
 Field fields[] = {
-	{"value4", 54},
-	{"value5", 6468},
-	{"value6", 2452}
+    {"value4", 54},
+    {"value5", 6468},
+    {"value6", 2452}
 };
 
 // Get array size
@@ -76,7 +76,7 @@ json.addFields(fields, fieldsSize);
 
 // Example
 for(auto const& field : json.getFields())
-	cout << field.key << ":" << field.value << endl;
+    cout << field.key << ":" << field.value << endl;
 
 /* ... */
 ```

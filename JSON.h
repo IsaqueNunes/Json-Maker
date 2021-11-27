@@ -10,17 +10,17 @@ class JSON {
     list<Field> fields;
 
     public:
-		void addField(string key, double value);
+        void addField(string key, double value);
 
-		void addField(Field field);
+        void addField(Field field);
 
-		void addFields(Field *fieldsToInsert, size_t fieldsAmmount);
+        void addFields(Field *fieldsToInsert, size_t fieldsAmmount);
 
-		list<Field> getFields();
+        list<Field> getFields();
 
-		double getValue(string key);
-		
-		string toString();
+        double getValue(string key);
+        
+        string toString();
 };
 
 #endif /* JSON_H */
